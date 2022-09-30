@@ -306,6 +306,7 @@ def _detect_sdk_version(ctx, goroot):
     version_file_path = goroot + "/VERSION"
     if ctx.path(version_file_path).exists:
         version_contents = ctx.read(version_file_path)
+
         # VERSION file has version prefixed by go, eg. go1.18.3
         return version_contents[2:]
 
