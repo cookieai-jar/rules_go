@@ -181,7 +181,7 @@ func runPrepare(ctx context.Context, stderr io.Writer, args []string) error {
 	}
 
 	// Upload to mirror.bazel.build.
-	arcGHURLWithoutScheme := fmt.Sprintf("github.com/bazelbuild/rules_go/releases/download/%[1]s/rules_go-%[1]s.zip", version)
+	arcGHURLWithoutScheme := fmt.Sprintf("github.com/cookieai-jar/rules_go/releases/download/%[1]s/rules_go-%[1]s.zip", version)
 	if uploadToMirror {
 		fmt.Fprintf(stderr, "uploading archive to mirror.bazel.build...\n")
 		if err := copyFileToMirror(ctx, arcGHURLWithoutScheme, arcName); err != nil {
