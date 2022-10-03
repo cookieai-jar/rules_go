@@ -125,7 +125,7 @@ func runPrepare(ctx context.Context, stderr io.Writer, args []string) error {
 	branchName := "release-" + majorMinor[len("v"):]
 	if !gitBranchExists(ctx, rootDir, branchName) {
 		if !isMinorRelease {
-			return fmt.Errorf("release branch %q does not exist locally. Fetch it, set RULES_GO_VERSION, add commits, and run this command again.")
+			return fmt.Errorf("release branch %q does not exist locally. Fetch it, set RULES_GO_VERSION, add commits, and run this command again.", branchName)
 		}
 		if err := checkRulesGoVersion(ctx, rootDir, "HEAD", version); err != nil {
 			return err
